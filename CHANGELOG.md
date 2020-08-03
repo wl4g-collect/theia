@@ -2,6 +2,11 @@
 
 ## v1.5.0
 
+- [security] updated version range of `decompress` to fix known security vulnerability [#8924](https://github.com/eclipse-theia/theia/pull/8294)
+  - with an updated version range, downstream applications have the possibility to:
+    - upgrade their `decompress` version (to benefit from the fix in `4.2.1`) by performing `yarn upgrade decompress` (which fixes the security flaw).
+    - use an earlier vulnerable version of `decompress` (`4.2.0`) for performance reasons by using `yarn resolutions`.
+
 <a name="breaking_changes_1.5.0">[Breaking Changes:](#breaking_changes_1.5.0)</a>
 
 - [output] `OutputWidget#setInput` has been removed. The _Output_ view automatically shows the channel when calling `OutputChannel#show`. Moved the `OutputCommands` namespace from the `output-contribution` to its dedicated `output-commands` module to overcome a DI cycle. [#8243](https://github.com/eclipse-theia/theia/pull/8243)
